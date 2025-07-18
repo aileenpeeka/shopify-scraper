@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "b530a512-85e3-4846-94dd-598f8a3cee55",
+		"name": "Shopify Scraper API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46878329",
+		"_collection_link": "https://aileenpeeka.postman.co/workspace/Aileen-Peeka's-Workspace~28ae3753-f73f-40dc-8080-1b8f7d538d4f/collection/46878329-b530a512-85e3-4846-94dd-598f8a3cee55?action=share&source=collection_link&creator=46878329"
+	},
+	"item": [
+		{
+			"name": "Scrape Shopify Store with Competitors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/scrape?website_url=https://allbirds.com&include_competitors=true",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"scrape"
+					],
+					"query": [
+						{
+							"key": "website_url",
+							"value": "https://allbirds.com"
+						},
+						{
+							"key": "include_competitors",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

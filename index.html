@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopify Scraper Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        input, button { padding: 0.5em; font-size: 1em; }
+        pre { background: #f4f4f4; padding: 1em; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Shopify Scraper</h1>
+    <form id="scrape-form">
+        <input type="text" id="url" placeholder="Enter Shopify store URL" size="40" required />
+        <button type="submit">Scrape</button>
+    </form>
+    <h2>Result</h2>
+    <pre id="result"></pre>
+    <script>
+        document.getElementById('scrape-form').onsubmit = async function(e) {
+            e.preventDefault();
+            const url = document.getElementById('url').value;
+            document.getElementById('result').textContent = 'Loading...';
+            try {
+                const resp = await fetch(`/api/scrape?website_url=${encodeURIComponent(url)}`);
+                const data = await resp.json();
+                document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+            } catch (err) {
+                document.getElementById('result').textContent = 'Error: ' + err;
+            }
+        };
+    </script>
+</body>
+</html> 
