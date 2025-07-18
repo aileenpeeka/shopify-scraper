@@ -75,6 +75,3 @@ shopify_scraper/Shopify-API.postman_collection.json
 ```
 
 ---
-
-## License
-MIT 
